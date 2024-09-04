@@ -1,0 +1,7 @@
+1. for best and worst search, does it need to be the first memory?
+
+2. for hash table to search for overlapping, there is no other way better than O(n)
+
+3. release: is  releasing "|----|    |-----|" valid?
+
+4. how could it be false?

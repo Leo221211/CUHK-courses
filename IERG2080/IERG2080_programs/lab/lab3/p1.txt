@@ -1,0 +1,1 @@
+cat | cut -d ' ' -f $i | paste -s | tr [:blank:] '+' | bc

@@ -1,0 +1,458 @@
+Output of BEST_FIT.csv:
+
+
+Init finished, current status:
+
+memMap: (start, size, occupation status, end)
+(0, 1024, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1024,0)
+1:
+with max block size:1024
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-0 1000-0 
+
+
+
+D:\OneDrive\OneDrive - The Chinese University of Hong Kong\CUHK\y2s1\CSCI2100\CSCI2100-MuquanYU-1155191596-test\CSCI2100-MuquanYU-1155191596\Java
+Start test on ../Data/BEST_FIT.csv.
+MemoryOperation: opType=REQUEST, addr=670, size=12.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 670, F, 669)->(670, 12, O, 681)->(682, 342, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (682,682)  (0,0)  (670,670)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (342,682)  (670,0)
+1:
+with max block size:670
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-682 750-682 800-682 850-682 900-682 950-682 1000-682 
+
+
+
+MemoryOperation: opType=REQUEST, addr=733, size=13.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 670, F, 669)->(670, 12, O, 681)->(682, 51, F, 732)->(733, 13, O, 745)->(746, 278, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:  (733,733)
+2:  (746,746)  (682,682)  (670,670)
+3:
+
+htOfFreeSize: (size, starting address)
+0:  (278,746)  (670,0)
+1:  (51,682)
+with max block size:670
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-682 750-746 800-746 850-746 900-746 950-746 1000-746 
+
+
+
+MemoryOperation: opType=RELEASE, addr=733, size=13.
+memMap: (start, size, occupation status, end)
+(0, 670, F, 669)->(670, 12, O, 681)->(682, 342, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+2:  (682,682)  (670,670)
+3:
+
+htOfFreeSize: (size, starting address)
+0:  (342,682)  (670,0)
+1:
+with max block size:670
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-682 750-682 800-682 850-682 900-682 950-682 1000-682 
+
+
+
+MemoryOperation: opType=RELEASE, addr=670, size=12.
+memMap: (start, size, occupation status, end)
+(0, 1024, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1024,0)
+1:
+with max block size:1024
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-0 1000-0 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=8.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 8, O, 7)->(8, 1016, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (8,8)  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1016,8)
+1:
+with max block size:1016
+
+part of anchors in address-startingAddr: 
+0-0 50-8 100-8 150-8 200-8 250-8 300-8 350-8 400-8 450-8 500-8 550-8 600-8 650-8 700-8 750-8 800-8 850-8 900-8 950-8 1000-8 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=15.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 8, O, 7)->(8, 15, O, 22)->(23, 1001, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (8,8)  (0,0)
+1:  (23,23)
+
+htOfFreeSize: (size, starting address)
+0:
+1:  (1001,23)
+with max block size:1001
+
+part of anchors in address-startingAddr: 
+0-0 50-23 100-23 150-23 200-23 250-23 300-23 350-23 400-23 450-23 500-23 550-23 600-23 650-23 700-23 750-23 800-23 850-23 900-23 950-23 1000-23 
+
+
+
+MemoryOperation: opType=RELEASE, addr=0, size=23.
+memMap: (start, size, occupation status, end)
+(0, 1024, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1024,0)
+1:
+with max block size:1024
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-0 1000-0 
+
+
+
+MemoryOperation: opType=REQUEST, addr=552, size=1.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 552, F, 551)->(552, 1, O, 552)->(553, 471, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)  (552,552)
+1:  (553,553)
+
+htOfFreeSize: (size, starting address)
+0:  (552,0)
+1:  (471,553)
+with max block size:552
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-553 650-553 700-553 750-553 800-553 850-553 900-553 950-553 1000-553 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=6.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 552, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 465, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (552,552)  (0,0)
+1:  (553,553)
+2:
+3:  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (552,0)
+1:  (465,559)
+with max block size:552
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-559 1000-559 
+
+
+
+MemoryOperation: opType=REQUEST, addr=540, size=3.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 540, F, 539)->(540, 3, O, 542)->(543, 9, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 465, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)  (540,540)  (552,552)
+1:  (553,553)
+2:
+3:  (543,543)  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (540,0)
+1:  (9,543)  (465,559)
+with max block size:540
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-543 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-559 1000-559 
+
+
+
+MemoryOperation: opType=REQUEST, addr=936, size=7.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 540, F, 539)->(540, 3, O, 542)->(543, 9, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 377, F, 935)->(936, 7, O, 942)->(943, 81, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (552,552)  (0,0)  (936,936)
+1:  (553,553)
+2:
+3:
+4:  (540,540)
+5:
+6:
+7:  (943,943)  (543,543)  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (540,0)
+1:  (81,943)  (9,543)  (377,559)
+2:
+3:
+with max block size:540
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-543 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-943 1000-943 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=15.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 540, F, 539)->(540, 3, O, 542)->(543, 9, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 377, F, 935)->(936, 7, O, 942)->(943, 15, O, 957)->(958, 66, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (552,552)  (0,0)  (936,936)
+1:  (553,553)
+2:
+3:
+4:  (540,540)
+5:
+6:  (958,958)
+7:  (943,943)  (543,543)  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (540,0)
+1:  (9,543)  (377,559)
+2:  (66,958)
+3:
+with max block size:540
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-543 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-943 1000-958 
+
+
+
+MemoryOperation: opType=REQUEST, addr=907, size=15.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 540, F, 539)->(540, 3, O, 542)->(543, 9, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 348, F, 906)->(907, 15, O, 921)->(922, 14, F, 935)->(936, 7, O, 942)->(943, 15, O, 957)->(958, 66, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (552,552)  (0,0)  (936,936)
+1:  (553,553)
+2:  (922,922)
+3:  (907,907)
+4:  (540,540)
+5:
+6:  (958,958)
+7:  (559,559)  (943,943)  (543,543)
+
+htOfFreeSize: (size, starting address)
+0:  (348,559)  (540,0)
+1:  (9,543)
+2:  (14,922)  (66,958)
+3:
+with max block size:540
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-543 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-943 1000-958 
+
+
+
+MemoryOperation: opType=RELEASE, addr=936, size=22.
+memMap: (start, size, occupation status, end)
+(0, 540, F, 539)->(540, 3, O, 542)->(543, 9, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 348, F, 906)->(907, 15, O, 921)->(922, 102, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (552,552)  (0,0)
+1:  (553,553)
+2:  (922,922)
+3:  (907,907)
+4:  (540,540)
+5:
+6:
+7:  (559,559)  (543,543)
+
+htOfFreeSize: (size, starting address)
+0:  (348,559)  (540,0)
+1:  (9,543)
+2:  (102,922)
+3:
+with max block size:540
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-543 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-922 1000-922 
+
+
+
+MemoryOperation: opType=RELEASE, addr=540, size=3.
+memMap: (start, size, occupation status, end)
+(0, 552, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 348, F, 906)->(907, 15, O, 921)->(922, 102, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)  (552,552)
+1:  (553,553)
+2:  (922,922)
+3:  (907,907)
+4:
+5:
+6:
+7:  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (552,0)  (348,559)
+1:
+2:  (102,922)
+3:
+with max block size:552
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-922 1000-922 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=7.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 552, F, 551)->(552, 1, O, 552)->(553, 6, O, 558)->(559, 348, F, 906)->(907, 15, O, 921)->(922, 7, O, 928)->(929, 95, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)  (552,552)
+1:  (929,929)  (553,553)
+2:  (922,922)
+3:  (907,907)
+4:
+5:
+6:
+7:  (559,559)
+
+htOfFreeSize: (size, starting address)
+0:  (552,0)  (348,559)
+1:
+2:
+3:  (95,929)
+with max block size:552
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-559 650-559 700-559 750-559 800-559 850-559 900-559 950-929 1000-929 
+
+
+
+MemoryOperation: opType=RELEASE, addr=552, size=7.
+memMap: (start, size, occupation status, end)
+(0, 907, F, 906)->(907, 15, O, 921)->(922, 7, O, 928)->(929, 95, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:  (929,929)
+2:  (922,922)
+3:  (907,907)
+
+htOfFreeSize: (size, starting address)
+0:
+1:  (907,0)  (95,929)
+with max block size:907
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-929 1000-929 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=12.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 907, F, 906)->(907, 15, O, 921)->(922, 7, O, 928)->(929, 12, O, 940)->(941, 83, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:  (941,941)  (929,929)
+2:  (922,922)
+3:  (907,907)
+
+htOfFreeSize: (size, starting address)
+0:
+1:  (83,941)  (907,0)
+with max block size:907
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-941 1000-941 
+
+
+
+MemoryOperation: opType=RELEASE, addr=907, size=34.
+memMap: (start, size, occupation status, end)
+(0, 1024, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1024,0)
+1:
+with max block size:1024
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-0 1000-0 
+
+
+
+MemoryOperation: opType=REQUEST, addr=null, size=9.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 9, O, 8)->(9, 1015, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:  (9,9)
+
+htOfFreeSize: (size, starting address)
+0:
+1:  (1015,9)
+with max block size:1015
+
+part of anchors in address-startingAddr: 
+0-0 50-9 100-9 150-9 200-9 250-9 300-9 350-9 400-9 450-9 500-9 550-9 600-9 650-9 700-9 750-9 800-9 850-9 900-9 950-9 1000-9 
+
+
+
+All test passed for ../Data/BEST_FIT.csv.

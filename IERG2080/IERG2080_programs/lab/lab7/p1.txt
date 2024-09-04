@@ -1,0 +1,1 @@
+The problem is that the default character set used by the compiler may not support the Chinese character '日'. To fix this, we can use the Unicode representation of the character in the printf statement by using the \u escape sequence followed by the Unicode code point of the character. For example, we can use printf("%ls\n", L"\u65E5"); to print the character '日' in Unicode.

@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.allowMnemonics": false,
+    "code-runner.runInTerminal": true,
+    "C_Cpp.errorSquiggles": "disabled"
+}

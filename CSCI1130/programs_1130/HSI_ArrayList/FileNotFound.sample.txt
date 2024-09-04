@@ -1,0 +1,14 @@
+
+Input HSI filename (.csv): NO_THIS_FILE.xyz
+Reading [NO_THIS_FILE.xyz]
+File not found!
+Hardcoding records
+2024-01-02 close: 20500.00 change: 500.00 range: 2600.00
+2024-01-03 close: 20300.00 change: -200.00 range: 3400.00
+2024-01-04 close: 20000.00 change: -300.00 range: 3400.00
+History size: 3
+Total gain: 500.00
+Number of gain days: 1
+Total loss: -500.00
+Number of loss days: 2
+Most recent date of largest range: 2024-01-04

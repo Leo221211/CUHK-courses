@@ -1,0 +1,8 @@
+insert: i, a
+go to the start or end of the line: ^ or 0; $; hjkl; ctrl UDFB; gg G
+go to next line: ctl+Y; ctl+E
+go to the prev or next page: ctl+F(U) ctl+B(D)
+undo and redo: u; ctrl+r
+delete the whole line: dd
+copy and paste: v; y; c; (g)p
+

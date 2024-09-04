@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"exercise","l":"ShakeMe"},{"p":"exercise","l":"ShakeMeBase"},{"l":"所有类和接口","u":"allclasses-index.html"}];updateSearchResults();

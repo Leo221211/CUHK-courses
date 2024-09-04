@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(diff test.txt <(echo -e "hello\nworld"))" == "" ] ; then
+    echo same
+else
+    echo different
+fi

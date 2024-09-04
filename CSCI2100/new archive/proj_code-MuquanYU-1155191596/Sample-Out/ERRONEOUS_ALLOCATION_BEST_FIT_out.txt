@@ -1,0 +1,74 @@
+Output of ERRONEOUS_ALLOCATION_BEST_FIT.csv:
+
+Init finished, current status:
+
+memMap: (start, size, occupation status, end)
+(0, 1024, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1024,0)
+1:
+with max block size:1024
+
+part of anchors in address-startingAddr: 
+0-0 50-0 100-0 150-0 200-0 250-0 300-0 350-0 400-0 450-0 500-0 550-0 600-0 650-0 700-0 750-0 800-0 850-0 900-0 950-0 1000-0 
+
+
+
+D:\OneDrive\OneDrive - The Chinese University of Hong Kong\CUHK\y2s1\CSCI2100\CSCI2100-MuquanYU-1155191596-test\CSCI2100-MuquanYU-1155191596\Java
+Start test on ../Data/ERRONEOUS_ALLOCATION_BEST_FIT.csv.
+MemoryOperation: opType=REQUEST, addr=546, size=1020.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=8.
+request done, the current structure:
+memMap: (start, size, occupation status, end)
+(0, 8, O, 7)->(8, 1016, F, 1023)->
+
+htOfAddr: (starting addr, starting addr)
+0:  (8,8)  (0,0)
+1:
+
+htOfFreeSize: (size, starting address)
+0:  (1016,8)
+1:
+with max block size:1016
+
+part of anchors in address-startingAddr: 
+0-0 50-8 100-8 150-8 200-8 250-8 300-8 350-8 400-8 450-8 500-8 550-8 600-8 650-8 700-8 750-8 800-8 850-8 900-8 950-8 1000-8 
+
+
+
+MemoryOperation: opType=REQUEST, addr=6, size=8.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=140, size=1211.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=194, size=1856.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1489.
+MemoryOperation: opType=REQUEST, addr=376, size=1923.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1651.
+MemoryOperation: opType=REQUEST, addr=269, size=1907.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1258.
+MemoryOperation: opType=REQUEST, addr=865, size=1879.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1886.
+MemoryOperation: opType=REQUEST, addr=434, size=1025.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1073.
+MemoryOperation: opType=REQUEST, addr=33, size=1161.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=596, size=1528.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=null, size=1720.
+MemoryOperation: opType=REQUEST, addr=null, size=1951.
+MemoryOperation: opType=REQUEST, addr=65, size=1768.
+invalid operation
+MemoryOperation: opType=REQUEST, addr=738, size=1920.
+invalid operation
+All test passed for ../Data/ERRONEOUS_ALLOCATION_BEST_FIT.csv.

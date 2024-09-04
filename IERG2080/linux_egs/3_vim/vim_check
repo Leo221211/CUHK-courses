@@ -1,0 +1,144 @@
+Last login: Thu Feb  2 15:37:33 on console
+(a is for appending letters after the cursorbase) mac@Leos-Macbook ~ % su
+i is for simply insert Password:
+su: Sorry A is for appending after the linee
+(base) mac@Leos-Macbook ~ % s
+I is for inserting the first none white space charPassword:
+o open empty line and insert
+O open empty line in front and insert
+
+cw move to theend of the word and delete the passed and insert: Sorry
+
+cW white space deliminated mac@Leos-Macbook ~ % man su
+cts change up to char s se) mac@Leos-Macbook ~ % finger
+C change up to the end of the line
+cc delete the currrnt line
+s substitute current char and insert ac      LeoYu                s00        Thu    15:37
+R to replace kj-Macbook ~% pine
+
+r + filename: read in (insert) the text
+move: ctrl FB UD HML YE;base) mac@Leos-Macbook ~ % homebrew install lynx
+zsh: command not found: homebrew
+(base) mac@Leos-Macbook ~ % brew install lynx 
+
+Running `brew update --auto-update`..
+=> Auto-updated Homebrew!
+
+		Updated 161 tap (homebrew/core).
+
+You have 7 outdated formulae installed.
+You can upgrade them with brew upgrade
+or list them with brew outdated.
+
+==> Fetching dependencies for lynx: ca-certificates and openssl@3
+==> Fetching ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2023-
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/blobs/sha256:11
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Fetching openssl@3
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/manifests/3.0.7
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:aaa47bcc
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Fetching lynx
+==> Downloading https://ghcr.io/v2/homebrew/core/lynx/manifests/2.8.9rel.1_1-2
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/lynx/blobs/sha256:cce0820f34703
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Installing dependencies for lynx: ca-certificates and openssl@3
+==> Installing lynx dependency: ca-certificates
+==> Pouring ca-certificates--2023-01-10.all.bottle.tar.gz
+==> Regenerating CA certificate bundle from keychain, this may take a while...
+🍺  /opt/homebrew/Cellar/ca-certificates/2023-01-10: 3 files, 216.9KB
+==> Installing lynx dependency: openssl@3
+==> Pouring openssl@3--3.0.7.arm64_monterey.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openssl@3/3.0.7: 6,454 files, 28.0MB
+==> Installing lynx
+==> Pouring lynx--2.8.9rel.1_1.arm64_monterey.bottle.2.tar.gz
+🍺  /opt/homebrew/Cellar/lynx/2.8.9rel.1_1: 11 files, 2.2MB
+==> Running `brew cleanup lynx`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+Removing: /Users/mac/Library/Caches/Homebrew/lynx--2.8.9rel.1_1... (897KB)
+==> Upgrading 1 dependent of upgraded formulae:
+Disable this behaviour by setting HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+node 19.2.0 -> 19.5.0
+==> Fetching dependencies for node: c-ares and icu4c
+==> Fetching c-ares
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/manifests/1.19.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/blobs/sha256:1fc78eca07e
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Fetching icu4c
+==> Downloading https://ghcr.io/v2/homebrew/core/icu4c/manifests/72.1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/icu4c/blobs/sha256:90c50fe2cbf8
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Fetching node
+==> Downloading https://ghcr.io/v2/homebrew/core/node/manifests/19.5.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/blobs/sha256:bb9f921dbacf7
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+########################################                                  56.6%^Z
+zsh: suspended  brew install lynx
+(base) mac@Leos-Macbook ~ % jobs
+[1]  + suspended  brew install lynx
+(base) mac@Leos-Macbook ~ % fg brew
+[1]  + continued  brew install lynx
+######################################################################## 100.0%
+==> Upgrading node
+  19.2.0 -> 19.5.0 
+
+==> Installing dependencies for node: c-ares and icu4c
+==> Installing node dependency: c-ares
+==> Pouring c-ares--1.19.0.arm64_monterey.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/c-ares/1.19.0: 87 files, 675.9KB
+==> Installing node dependency: icu4c
+==> Pouring icu4c--72.1.arm64_monterey.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/icu4c/72.1: 263 files, 78.4MB
+==> Installing node
+==> Pouring node--19.5.0.arm64_monterey.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/node/19.5.0: 2,153 files, 54MB
+==> Running `brew cleanup node`...
+Removing: /opt/homebrew/Cellar/node/19.2.0... (1,963 files, 51MB)
+==> Checking for dependents of upgraded formulae...
+==> No broken dependents found!
+(base) mac@Leos-Macbook ~ % lynx
+w
+zsh: suspended  lynx
+(base) mac@Leos-Macbook ~ % man lynx
+(base) mac@Leos-Macbook ~ % lynx www.google.com
+(base) mac@Leos-Macbook ~ % lpr
+lpr: Error - No default destination.
+(base) mac@Leos-Macbook ~ % time
+shell  0.03s user 0.06s system 0% cpu 9:38.28 total
+children  15.12s user 14.08s system 5% cpu 9:38.28 total
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:21 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:30 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:31 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:32 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:33 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:34 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:34 HKT 2023
+(base) mac@Leos-Macbook ~ % date
+Thu Feb  2 15:47:35 HKT 2023
+(base) mac@Leos-Macbook ~ % help man
+zsh: command not found: help
+(base) mac@Leos-Macbook ~ % cd Desktop/IERG2080\ aliass/linux_egs/3_vim 
+(base) mac@Leos-Macbook 3_vim % ls
+(base) mac@Leos-Macbook 3_vim % vim vim_check
+(base) mac@Leos-Macbook3_vim % xxd  

@@ -1,0 +1,17 @@
+main: main.o fn1.o
+	$(CC) main.o fn1.o -o main
+
+.SUFFIXES: .c
+.c.o:
+	$(CC) -c $<
+
+#main.o: main.c
+#	gcc -c main.c -o main.o
+
+#fn1.o: fn1.c
+#	gcc -c fn1.c -o fn1.o
+ 
+
+
+clean: 
+	-$(RM) *.o main
