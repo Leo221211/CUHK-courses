@@ -1,0 +1,102 @@
+CP210x Windows 2000 Driver v6.3a Release Notes
+Copyright (C) 2011 Silicon Laboratories, Inc.
+
+This release contains the following components:
+
+* x86 directory
+	* silabser.sys
+	* silabenm.sys
+* CP210xVCPInstaller.exe (v3.2)
+* setup.ini
+* silabser.cat
+* slabvcp.inf
+* ReleaseNotes.txt (this file)
+
+
+Driver Installation
+-------------------
+
+	See Kit User's Guide for installation instructions.
+
+
+Release Dates
+-------------
+	CP210x Windows 2000 Driver v6.3a - February 1, 2011
+
+
+CP210x Windows Driver Revision History
+--------------------------------------
+
+version 6.3a
+	Corrections
+	-----------
+	Updated to 3.2 DriverInstaller to correct a bug seen when updating from an old driver
+	installer version	
+
+version 6.3
+	Corrections
+	-----------
+	Corrected a bug introduced in 6.2 which caused BSOD during surprise removal.
+	
+	Corrected a bug found in I/O cancellation corner case
+
+version 6.2
+	Corrections
+	-----------
+	Corrected return value for DeviceIoControl() and other COM API functions once the device is
+	removed to properly show ERROR_ACCESS_DENIED (0x05) instead of ERROR_BAD_COMMAND in GetLastError()
+
+	Corrected bug in DTR/RTS reporting latency seen if you set DTR/RTS and ask for it before the
+	device has reported it to the host - now when it is written it reads back immediately
+
+	Corrected several USB requests that were improperly defined as device requests when they are actually
+	interface requests - this doesn't exhibit and bugs in current single interface devices but was changed
+	to be complete and correct
+
+	New features/Enhancements
+	-------------------------
+	Added support for CP2104 and CP2105 devices
+
+version 6.1
+	Corrections
+	-----------	
+	Corrected a memory leak which could bog the system down after extended use of a contiuously
+	opened COM port, and conditionally yield bluescreens on certain systems
+
+	Corrected a problem where an IO reqest would sometimes return a busy status to
+	user mode, instead the queue is restarted if necessary before adding an IO request
+	to the queue
+
+	Corrected a condition which would blue screen on cancelling write request that hasn't been
+	fully sent out USB
+
+	Corrected the Capabilites return value, which incorrectly reported that timeouts are not supported
+
+	Corrected several Queue size return values, which affected behavior in the MSCOMM control
+	
+	Corrected DTR/RTS value on device insertion, visible when Serial Enumeration is disabled
+
+	Corrected the ability to override Baud Rate and Line Control from the INF file
+
+version 6.0
+	Corrections
+	-----------
+	Corrected blue screen due to a selective suspend error in WDF, selective suspend no longer
+	supported in 2K by the driver
+	Corrected multiple blue screens and driver hangs related to race conditions in the driver
+	Corrected problem where driver hangs when 4 or more devices are connected to a single
+	transaction translator hub
+	Corrected bugs that prohibited serial enumeration
+	Corrected problem where IO requests were not completed/cancelled on a close
+	Corrected problem with dialing out or PPP connections
+	
+	New features/Enhancements
+	-------------------------
+	Created IO queueing mechanism so that multiple reads, writes, etc. can be queued and
+	waited on
+
+version 5.4.29
+
+	New features/Enhancements
+	-------------------------
+	Branched driver from the Win XP/2003/Vista/7 package since it can only use KMDF 1.7
