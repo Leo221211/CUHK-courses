@@ -1,0 +1,189 @@
+/**
+ * order: if((first_B & 0x80) == 0x00)      // 1 byte
+*/
+
+#include <stdio.h>
+#include <stdlib.h>    // exit
+#define PRTLINE printf("line: %d\n", __LINE__)
+
+// check type: 16BE:0, 16LE:1, else:2;
+// pointer move to  start of content
+int check_move(FILE * fp);
+
+// input fp and type, return 1 unicode point, move fp to start of next character
+// if EOF, return -1
+int bin_ucp(FILE *fp, int ftype);
+
+// input unicode codepoint, return idx: A:0, B:1 ...
+int ucp_idx(int ucp);
+
+int main(int argc, char *argv[])
+{
+    // loop through every file
+    for(int i = 1; i < argc; i ++)
+    {
+        // open file
+        FILE * fp = fopen(argv[i], "r");
+        if(fp == NULL) {perror("error: can't open file\n"); exit(1);}
+
+        // read through file
+        int alpha_count[26] = {0};
+        int ftype = check_move(fp);
+        #ifdef TEST_CM
+        printf("type: %d, first character: %x\n", ftype, fgetc(fp));
+        #endif
+
+        while(1)
+        {
+            // binary to unicode point
+            int ucp = bin_ucp(fp, ftype);
+            if(ucp == -1)   // EOF
+            {
+                break;
+            }
+
+            // count
+            if(ucp_idx(ucp) != -1)
+            {
+                alpha_count[ucp_idx(ucp)] ++;
+            }
+        }
+
+        // print
+        printf("%s\n", argv[i]);
+        for(int i = 'A'; i <= 'Z'; i ++)
+        {
+            printf("%c: %d\n", i, alpha_count[i - 'A']);
+        }
+
+        // close file
+        fclose(fp);
+    }
+
+    return 0;
+}
+
+// check type: 16BE:0, 16LE:1, else:2;
+// pointer move to  start of content
+int check_move(FILE * fp)
+{
+    // get first 3 bytes
+    unsigned char bom[3];
+    fread(bom, sizeof(unsigned char), 3, fp);
+
+    if(bom[0] == 0xfe && bom[1] == 0xff)    // utf-16 BE
+    {
+        fseek(fp, -1L, SEEK_CUR);
+        return 0;
+    }
+    else if(bom[0] == 0xff && bom[1] == 0xfe)   // utf-16 LE
+    {
+        fseek(fp, -1L, SEEK_CUR);
+    }
+    else if(bom[0] == 0xef && bom[1] == 0xbb && bom[2] == 0xbf) // utf-8 w BOM
+    {
+        return 2;
+    }
+    else    // utf-8 w/o BOM or ASCII
+    {
+        rewind(fp);
+        return 2;
+    }
+
+
+}
+
+// input fp and type, return 1 unicode point, move fp to start of next character
+// if EOF, return -1
+int bin_ucp(FILE *fp, int ftype)
+{
+    // printf("ftype is %d\n", ftype);
+    int ucp;
+
+    if(ftype == 2)  // utf-8 or ascii
+    {
+        // PRTLINE;
+
+        // get first byte
+        unsigned char first_B = fgetc(fp);
+        unsigned char second_B, third_B, forth_B;
+
+        if(first_B == 0xff)  // EOF
+        {
+            return -1;
+        }
+
+        // PRTLINE;
+        // printf("first byte: %02x\n", first_B);
+
+        // handle rest of the bytes
+        if((first_B & 0x80) == 0x00)      // 1 byte
+        {
+            // PRTLINE;
+            ucp = first_B & 0x7f;
+        }
+        else if((first_B & 0xe0) == 0xc0) // 2 bytes
+        {
+            // PRTLINE;
+            second_B = fgetc(fp);
+            ucp = (first_B & 0x1f) << 6 | (second_B & 0x3f);
+        }
+        else if((first_B & 0xf0) == 0xe0)   // 3 bytes
+        {
+            //PRTLINE;
+            second_B = fgetc(fp);
+            third_B = fgetc(fp);
+            ucp = (first_B & 0x0f) << 12 | (second_B & 0x3f) << 6 | (third_B & 0x3f);
+            
+            // printf("ucp: %x\n", ucp);    
+            // printf("f,s,t B:%02x%02x%02x\n", first_B, second_B, third_B);
+            // printf("f,s,t B:%02x %02x %02x\n", (first_B & 0x0f)<< 12, (second_B & 0x3f)<< 6 , (third_B & 0x3f));
+        }
+        else                                // 4 bytes
+        {
+            // PRTLINE;
+            second_B = fgetc(fp);
+            third_B = fgetc(fp);
+            forth_B = getc(fp);
+            ucp = (first_B & 0x07) << 18 | (second_B & 0x3f) << 12 | (third_B & 0x3f) << 6 | (forth_B & 0x3f);
+        }
+    }
+    else    // utf-16
+    {
+
+    }
+
+    // printf("%x ", ucp);
+    return ucp;
+}
+
+// input unicode codepoint, return idx: A:0, B:1 ...
+// if invalid return -1
+int ucp_idx(int ucp)
+{
+    // half width small case
+    if('a' <= ucp && ucp <= 'z' )
+    {
+        return ucp - 'a';
+    }
+
+    // hwcc
+    if ('A' <= ucp && ucp <= 'Z')
+    {
+        return ucp - 'A';
+    }
+
+    // fwsc
+    if (0xff41 <= ucp && ucp <= 0xff5a)
+    {
+        return ucp - 0xff41;
+    }
+
+    // fwcc
+    if (0xff21 <= ucp && ucp <= 0xff3a)
+    {
+        return ucp - 0xff21;
+    }
+
+    return -1;
+}

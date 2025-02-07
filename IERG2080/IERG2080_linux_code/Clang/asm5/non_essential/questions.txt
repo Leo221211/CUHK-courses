@@ -1,0 +1,5 @@
+1. what is a file pointer? update after read function?
+    in linux, no difference r and rb?
+2. why is fseek() and fread() directly the file size
+3. is the only way of printing binaries to a file change to char?: no, fwrite
+4. why is this when using feof() and what should we do then
