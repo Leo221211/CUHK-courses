@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "string.h": "c",
+        "stdio.h": "c",
+        "random": "c"
+    }
+}

@@ -1,0 +1,18 @@
+------------------------------------------------------------
+Simple Shell Program for CSCI 3150 (Hong Xu, Henry@CSE,CUHK)
+------------------------------------------------------------
+
+Usage: Input a command for execution or exit for exiting the shell. 
+
+user@OSLAB1:/home/leosunix/CUHK/csci3150/assignment_1/src$ [Debug] argc = 5. They are: [ls] [|] [cd] [..] 
+[Debug] Num of pipe: 1
+[Debug] For pipe: argc = 2. They are: [ls] 
+[Debug] For pipe: argc = 3. They are: [cd] [..] 
+user@OSLAB1:/home/leosunix/CUHK/csci3150/assignment_1$ [Debug] argc = 2. They are: [Makefile] 
+[Debug] Num of pipe: 0
+Some error and the command meets none of the situation
+[Debug] argc = 5. They are: [ls] [|] [cd] [..] 
+[Debug] Num of pipe: 1
+[Debug] For pipe: argc = 2. They are: [ls] 
+[Debug] For pipe: argc = 3. They are: [cd] [..] 
+user@OSLAB1:/home/leosunix/CUHK/csci3150/assignment_1/src$ 
