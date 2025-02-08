@@ -1,3 +1,0 @@
-1. L2 norm  
-2. should quit early?
-3. mean shift: what normalization? how to determine in the same cluster?     
