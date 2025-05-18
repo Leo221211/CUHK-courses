@@ -1,0 +1,94 @@
+@startuml
+skinparam classAttributeIconSize 0
+'----------------------------------------
+interface Enemy {
++has_been_seen_before : Boolean
++antigens : [Antigens]
+}
+note left of Enemy::has_been_seen_before {
+True if this enemy has been encountered before, false otherwise
+}
+note left of Enemy::antigens {
+An enemy can be recognized and identified by its list of antigens
+}
+'----------------------------------------
+interface Antigen {
+// Substance that can be used to identify
+// whether the foreigner is an enemy,
+// and the kind of enemy
+}
+'----------------------------------------
+interface WhiteBloodCell {
++is_enemy(antigens:[Antigens]) -> Boolean
++kill(enemy:Enemy) -> Boolean
+}
+note left of WhiteBloodCell::is_enemy {
+Identify whether the set of antigens forms an enemy
+Returns true if it is an enemy, false otherwise
+}
+note left of WhiteBloodCell::kill {
+Try to kill an enemy, return true if successful, false otherwise
+}
+'----------------------------------------
+class Neutrophils {
+// Most common white blood cell
++kill(enemy:Enemy) -> Boolean
+}
+WhiteBloodCell <|.. Neutrophils
+'----------------------------------------
+interface Lymphocytes {
+// A kind of specialized and powerful whilte blood cell
+}
+'----------------------------------------
+class NKCell {
+// Natural killer
++is_enemy(antigens:[Antigens]) -> Boolean
++kill(enemy:Enemy) -> Boolean
+}
+'----------------------------------------
+class BCell {
++is_enemy(antigens:[Antigens]) -> Boolean
++kill(enemy:Enemy) -> Boolean
++make_antibodies(enemy :Enemy) -> Antibody
++ask_helper_t_cell_make_antibodies(t_cell: HelperTCell)
+}
+'----------------------------------------
+class TCell {
+// Killer
++is_activated: Boolean
++is_enemy(antigens:[Antigens]) -> Boolean
++kill(enemy:Enemy) -> Boolean
+}
+'----------------------------------------
+class HelperTCell {
+// Helper T cell
+-t_cell: TCell 
+-enemy_to_characteristics: Hashtable<Enemy -> [float]>
++get_enemy_characteristics(enemy: Enemy) -> [float]
++is_activated() -> Boolean
++is_enemy(antigens:[Antigens]) -> Boolean
++kill(enemy:Enemy) -> Boolean
+}
+note right of HelperTCell::is_activated{
+Wrap the is_activated attribute of the private t_cell as a public method outside reference
+}
+'----------------------------------------
+class Antibody {
+-enemy: Enemy
++set_enemy(enemy:Enemy)
++can_kill_enemy(enemy: Enemy) -> Boolean
++kill_enemy(enemy: Enemy) -> Boolean
+}
+'----------------------------------------
+WhiteBloodCell <|.. Lymphocytes
+Lymphocytes <|.. NKCell
+Lymphocytes <|.. BCell
+Lymphocytes <|.. TCell
+TCell *-- HelperTCell
+BCell ..> HelperTCell
+WhiteBloodCell ..> Enemy
+WhiteBloodCell ..> Antigen
+Enemy "1" *-- "n" Antigen
+Antibody --> Enemy
+'----------------------------------------
+@enduml

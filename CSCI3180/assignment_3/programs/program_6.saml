@@ -1,0 +1,9 @@
+let fib = fun x ->
+      let rec helper = fun x acc1 acc2 ->
+        if not (1 <= x)
+        then acc2
+        else helper (x - 1) acc2 (acc1 + acc2) 
+      in
+        helper x 0 1 
+in
+  fib 10

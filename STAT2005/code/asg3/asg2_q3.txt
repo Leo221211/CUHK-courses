@@ -1,0 +1,39 @@
+Q3
+a) CARDS3;
+Incorrect: CARDS3 is not a valid SAS statement.
+Correction: Use CARDS; CARDS4; or DATALINES; for inline data.
+
+b) DATA;
+Correct
+
+c) DATA IN.NEW.RECORD;
+Incorrect: Dataset names can only have two levels.
+Correction: Use a valid name, e.g., DATA INNEW.RECORD;
+
+d) LENGTH X 1 A B $ 12;
+Incorrect: The length of numeric value cannot be 1. The definition syntax for A and B is ambiguous.
+Correction: LENGTH X 8 A $ 12 B $ 12;
+
+e) *** COMMENT ***;
+Correct
+
+f) INPUT _A C2 – C10 $2 L 5-9. */ L IS NUMERIC /*;
+Incorrect: Incorrect comment syntax. Ambiguous format for L (Should not add "." after it).
+Correction: INPUT _A C2 – C10 $2 L 5-9 /* L IS NUMERIC */;
+
+g) INPUT @5 (X2 – X5) COMMA4 ;
+Incorrect: Invalid dash and parentheses in the syntax. Also need a "." after COMMA
+Correction: INPUT @5 x2 – x5 COMMA4.;
+
+h) INPUT X X X;
+Correct
+
+i) INFILE C:\DATA.TXT
+Incorrect: Missing semicolon and the file format needs quotes.
+Correction: INFILE 'C:\DATA.TXT';
+
+j) LIBNAME A.B 'C:";
+Incorrect: A.B cannot contain a period. And path needs paired quotes.
+Correction: LIBNAME AB 'C:\'';
+
+/***/

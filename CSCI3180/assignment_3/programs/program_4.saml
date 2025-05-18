@@ -1,0 +1,10 @@
+let eq = fun x y -> x <= y and y <= x,
+    fib = fun x ->
+      let rec helper = fun x acc1 acc2 ->
+        if not (1 <= x)
+        then acc2
+        else helper (x - 1) acc2 (acc1 + acc2) 
+      in
+        helper x 0 1 
+in
+  if eq (fib 10) (fib 8 + fib 9) then (fun x -> x) else 5

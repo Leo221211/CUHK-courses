@@ -1,0 +1,2 @@
+let eq = fun x -> fun y -> x <= y and y <= x in
+  eq 3 true

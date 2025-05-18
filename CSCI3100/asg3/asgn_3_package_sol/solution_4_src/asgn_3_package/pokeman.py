@@ -1,0 +1,218 @@
+import time
+
+from enum import Enum
+
+from random import Random, random
+
+from asgn_3_package.battle_system import BattleObjectData, CanBattle
+
+from asgn_3_package.training import (
+    Trainable,
+    TrainingStatusObserver,
+)
+
+
+class PokemanType(Enum):
+    FIRE = 1
+    WATER = 2
+    GRASS = 3
+    ELECTRIC = 4
+    UNKNOWN = 999
+
+
+class Pokeman(Trainable, CanBattle):
+    MAX_LEVEL = 4
+
+    def __init__(self, name: str):
+        """
+        name: The name of the pokeman
+        """
+
+        # All attributes are private, please do not access them directly
+        self._name = name
+        self._level = 0
+        self._hp = 10
+        self._attack = 0
+        self._defense = 0
+        self._speed = 0
+        self._type = PokemanType.UNKNOWN
+        self._training_observers: list[TrainingStatusObserver] = []
+        self._myself = self
+
+    def determine_type(self):
+        """
+        Determine the type of this Pokeman
+
+        The type of Pokeman is unknown when it was born. After being trained to a certain level,
+        the type will become determinable. The exact determination procedure is magic.
+        """
+        match self._level:
+            case 0 | 1 | 2:
+                self._type = PokemanType.UNKNOWN
+            case 3 | 4:
+                rand = Random()
+                rand_index = rand.randint(0, rand.randint(3, 4))
+                types = [
+                    PokemanType.FIRE,
+                    PokemanType.GRASS,
+                    PokemanType.GRASS,
+                    PokemanType.ELECTRIC,
+                    PokemanType.UNKNOWN,
+                ]
+                self._type = types[rand_index]
+
+    def get_name(self) -> str:
+        return self._name
+
+    def get_level(self) -> int:
+        return self._level
+
+    def get_hp(self):
+        return self._hp
+
+    def get_attack(self):
+        return self._attack
+
+    def get_defense(self):
+        return self._defense
+
+    def get_speed(self):
+        return self._speed
+
+    def get_type(self):
+        return self._type
+
+    def set_myself(self, myself):
+        """
+        A function to set myself back, just in case I have got lost...
+        """
+        self._myself = myself
+
+    def __str__(self) -> str:
+        return f"{self._name}: Level {self._level}, HP {self._hp}, Attack {self._attack}, Defense {self._defense}, Speed {self._speed}, Type {self._type}"
+
+    def practice(self, duration: int):
+        """
+        Practice the pokeman for a certain amount of time
+
+        When the practice is complete, the observers are notified
+
+        time: int: The amount of time to practice in seconds
+        """
+
+        if self != self._myself:
+            raise Exception("I am not myself!")
+
+        print(f"  {self._name} is practicing for {duration} seconds")
+
+        # Simulate the practice
+        time.sleep(duration)
+
+        for observer in self._training_observers:
+            observer.finished_training(self._myself)
+
+    def update_stats(self, level: int, hp: int, attack: int, defence: int, speed: int):
+        self._level = level
+        self._hp = hp
+        self._attack = attack
+        self._defense = defence
+        self._speed = speed
+
+    def get_cur_level(self) -> int:
+        return self.get_level()
+
+    def add_training_observer(self, observer: TrainingStatusObserver):
+        if observer in self._training_observers:
+            return
+        self._training_observers.append(observer)
+
+    def attack(self, other):
+        # Just an arbitrary way to calculate the damage
+        # Encapsulating the attributes inside a BattleObjectData object
+        # makes the the system more loosely coupled
+        other_battle_data = other.get_data_for_battle()
+        if other_battle_data.defence > self._attack:
+            damage = 0
+        else:
+            rand = Random()
+            damage = self._attack - rand.randint(0, 1) * other_battle_data.defence
+
+        if self._speed > other_battle_data.speed:
+            # I am faster, so my attack is powerful
+            return damage
+        else:
+            # I am slower, so my attack can cause only 50% damage
+            return damage/2
+
+    def take_damage(self, damage):
+        self._hp -= damage
+        print(f" {self._name} took {damage} damage!")
+
+    def get_data_for_battle(self) -> BattleObjectData:
+        return BattleObjectData(self._hp, self._attack, self._defense, self._speed)
+
+
+class SoftEngPokeman(CanBattle):
+    """
+    A new type that is not related to Pokeman in any way
+    But the author of this class wants to treat it as a Pokeman,
+    and let it participate in the Pokeman Battle...
+    """
+
+    def __init__(self, name: str):
+        self.name = name
+        self.level = 0
+        self.hp = 10
+        self.attack_point = 0 # need to modify the name to avoid name conflict with the function attack()
+        self.defense = 0
+        self.speed = 0
+
+    def get_name(self) -> str:
+        return self.name
+
+    def get_cur_level(self) -> int:
+        return self.level
+
+    def __str__(self) -> str:
+        return f"{self.name}: Level {self.level}, HP {self.hp}, Attack {self.attack_point}, Defense {self.defense}, Speed {self.speed}"
+
+    def update_stats(self, level: int, hp: int, attack: int, defence: int, speed: int):
+        self.level = level
+        self.hp = hp
+        self.attack_point = attack
+        self.defense = defence
+        self.speed = speed
+
+        print(f"{self.name} has been upgraded without any practice!")
+        print(self)
+
+    def get_hp(self):
+        return self.hp
+
+    def attack(self, other) -> int:
+        # Just an arbitrary way to calculate the damage
+        # Encapsulating the attributes inside a BattleObjectData object
+        # makes the the system more loosely coupled
+        other_battle_data = other.get_data_for_battle()
+        if other_battle_data.defence > self.attack_point:
+            damage = 0
+        else:
+            rand = Random()
+            damage = self.attack_point - rand.randint(0, 1) * other_battle_data.defence
+
+        if self.speed > other_battle_data.speed:
+            # I am faster, so my attack is powerful
+            return damage
+        else:
+            # I am slower, so my attack can cause only 50% damage
+            return damage/2
+
+    def take_damage(self, damage):
+        self.hp -= damage
+        print(f" {self.name} took {damage} damage!")
+
+    def get_data_for_battle(self) -> BattleObjectData:
+        return BattleObjectData(self.hp, self.attack_point, self.defense, self.speed)
+
+
+# ---------------------------------------------------------------------------------------
